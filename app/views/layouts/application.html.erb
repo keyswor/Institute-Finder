@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>INSTITUTE FINDER</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div class="container">
+	  <div class="header clearfix">
+	    <nav>
+	      <ul class="nav nav-pills pull-right">
+	        <li role="presentation" class="active"><%= link_to "Home", root_url %></li>
+	        
+	        <% if user_signed_in? %>
+			  <li>
+			  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+			  </li>
+			<% else %>
+			  <li>
+			  <%= link_to('Login', new_user_session_path)  %>  
+			  </li>
+			<% end %>
+	        <li role="presentation"><a href="#">Contact</a></li>
+	      </ul>
+	    </nav>
+	    <h3 class="text-muted"><%= link_to "INSTITUTE FINDER", root_url %></h3>
+	  </div>
+	  <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+		<%= yield %>
+		<footer class="footer">
+	    	<p>&copy; 2015 Company, Inc.</p>
+	  	</footer>
+
+    </div>
+
+</body>
+</html>
