@@ -11,7 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160503121040) do
+ActiveRecord::Schema.define(version: 20160504070108) do
+
+  create_table "for_institutes", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "lists", force: :cascade do |t|
+    t.string   "institute",  limit: 255
+    t.string   "course",     limit: 255
+    t.string   "duration",   limit: 255
+    t.string   "fee",        limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
+  create_table "listss", force: :cascade do |t|
+    t.string   "Institute",  limit: 255
+    t.string   "Course",     limit: 255
+    t.string   "Duration",   limit: 255
+    t.string   "Fee",        limit: 255
+    t.boolean  "done"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
