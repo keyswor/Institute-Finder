@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 gem 'devise'
+gem 'carrierwave'
+
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'autoprefixer-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
