@@ -13,6 +13,7 @@
 	      <ul class="nav nav-pills pull-right">
 	        <li role="presentation" class="active"><%= link_to "Home", root_url %></li>
 	        <li role="presentation"><%=link_to "Find Courses", lists_path%></li>
+	        
 	        <% if user_signed_in? %>
 			  <li>
 			  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
@@ -37,7 +38,7 @@
 
 		<%= yield %>
 		<footer class="footer">
-	    	<p>&copy; 2015 Company, Inc.</p>
+	    	<p>&copy; kishor panthi</p>
 	  	</footer>
 
     </div>

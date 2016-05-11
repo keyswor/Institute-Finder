@@ -3,6 +3,15 @@ before_action :authenticate_user!
 before_action :check_user, only: [:new, :create]
 def index
 	@lists = List.all
+	
+end
+def search
+@text = params[:text]
+@lists = List.where("institute LIKE ?", "%#{@text}%")
+
+render 'index'
+end
+def show
 end
 def new
 	@list = List.new
@@ -35,3 +44,4 @@ def check_user
 	end
 end
 end
+
